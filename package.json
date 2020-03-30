@@ -4,21 +4,34 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "node node_modules/jest/bin/jest.js --runInBand",
+		"build": "tsc",
+		"watch": "tsc -w",
+		"prepare": "npm run build",
+		"test:debug": "node inspect node_modules/jest/bin/jest.js --runInBand"
 	},
 	"repository": {
 		"type": "git",
 		"url": "github.com/gokaykucuk/specimen02"
 	},
-	"devDependencies": {},
-	"author": "Gokay Kucuk",
-	"license": "ISC",
-	"dependencies": {
+	"devDependencies": {
 		"@types/jest": "^25.1.4",
 		"@types/node": "^13.9.5",
 		"@types/ramda": "^0.27.0",
 		"jest": "^25.2.4",
 		"ts-jest": "^25.3.0",
 		"typescript": "^3.8.3"
+	},
+	"files": [
+		"lib/**/*"
+	],
+	"bin": {
+		"specimen02": "lib/Specimen02.js"
+	},
+	"author": "Gokay Kucuk",
+	"license": "ISC",
+	"dependencies": {
+		"ramda": "^0.27.0",
+		"ramda-adjunct": "^2.26.0"
 	}
 }
