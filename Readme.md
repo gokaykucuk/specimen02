@@ -1,7 +1,7 @@
 # 	🕋 Specimen02
 
 
-Specimen02 is a command-line interface library. It has a simple to use, extendible interface with command line tools to help you with (also just to show off a little). It's main focus is simplicity.
+Specimen02 is a command-line interface library. It has a simple to use, extendible interface with command line tools to help you with creating an interface between javascript and terminal. It's main focus is simplicity.
 
 ***Builds should be around ~1 kb.*** Anything more will introduce a refactoring round where it will be lowered back to ~1 kb.
 
