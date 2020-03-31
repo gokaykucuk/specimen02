@@ -29,7 +29,7 @@
 		"specimen02": "lib/Specimen02.js"
 	},
 	"author": "Gokay Kucuk",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"ramda": "^0.27.0",
 		"ramda-adjunct": "^2.26.0"
