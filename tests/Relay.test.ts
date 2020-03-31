@@ -1,4 +1,4 @@
-import { findNestedCommand } from '../src/Relay';
+import { findNestedCommand } from '../src/Specimen02';
 import { commandsStore } from '../config/commands';
 
 import { fromPairs } from 'ramda';
@@ -10,5 +10,9 @@ describe('relay store', () => {
 	test('can pass arguments to found command', () => {
 		const command = findNestedCommand(['install', 'fresh', 'argument1', 'argument2'], commandsStore);
 		expect(command['args'].length).toBe(2);
+	});
+	test('can print helpful message if found object is not a command', () => {
+		const command = findNestedCommand(['install'], commandsStore);
+		console.log(command);
 	});
 });
