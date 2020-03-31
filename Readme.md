@@ -31,6 +31,8 @@ Install it and save it to your dependencies.
 
 Specimen02 makes the assumption that config/commands.js has the command definition in place. If not, the commands can be also passed as an object directly. 
 
+⚠️ Not implemented. See (#1)
+
 If you would like specimen02 to create a sample command file for you, just run,
 
 ```specimen02 install fresh```
