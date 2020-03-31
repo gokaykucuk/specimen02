@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-import { execSync } from 'child_process';
-import { pipe, curry, reduce, path, has, mergeDeepWith, concat, ifElse, hasPath } from 'ramda';
-import { noop } from 'ramda-adjunct';
+import { reduce, mergeDeepWith, concat, hasPath } from 'ramda';
 
 const [, , ...args] = process.argv;
 
