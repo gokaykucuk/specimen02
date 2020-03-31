@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { reduce, mergeDeepWith, concat, hasPath } from 'ramda';
+import { reduce, has, set, lensPath, append } from 'rambda';
+const R = require('rambda');
 
 const [, , ...args] = process.argv;
 
@@ -11,8 +12,11 @@ const [, , ...args] = process.argv;
 // const logAndRunCommand = pipe(carriedLog, execSync, console.log);
 
 const commandReducer = (accumulatorValue: any, currentValue: any) => {
-	if (hasPath(["call"], accumulatorValue)) {
-		return mergeDeepWith(concat, accumulatorValue, { args: [currentValue] })
+	const R = require('rambda');
+	const argsLens = lensPath(['args'])
+	if (has("call", accumulatorValue)) {
+		const combinedArgs = append(currentValue, accumulatorValue.args || []);
+		return set(argsLens, combinedArgs, accumulatorValue)
 	} else {
 		return accumulatorValue[currentValue]
 	}
