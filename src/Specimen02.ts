@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { reduce, has, set, lensPath, append } from 'rambda';
-import * as fs from 'fs';
+import * as path from 'path';
 const [, , ...args] = process.argv;
 
 const commandReducer = (accumulatorValue: any, currentValue: any) => {
@@ -17,10 +17,12 @@ export const findNestedCommand = (commandChain: Array<string>, commandsStore: an
 	reduce(commandReducer, commandsStore, commandChain)
 );
 
-const specimentConfigPath = process.env.SPECIMEN_CONFIG_PATH || './config/specimen02.ts';
+
 if (process.env.NODE_ENV !== 'test') {
-	const specimenConfig = JSON.parse(fs.readFileSync(specimentConfigPath).toString());
-	Promise.resolve(findNestedCommand(args, specimenConfig)()).then((result) => {
+	const specimenConfigPath = process.env.SPECIMEN_CONFIG_PATH || 'config/specimen02.ts';
+	const specimenConfig = require(path.join(process.cwd(), specimenConfigPath));
+	// const specimenConfig = {};
+	Promise.resolve(findNestedCommand(args, specimenConfig).call()).then((result) => {
 		console.log(result);
 	}).catch((e) => {
 		console.error('Error at calling the function.', e);

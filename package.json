@@ -1,6 +1,6 @@
 {
 	"name": "specimen02",
-	"version": "0.0.92",
+	"version": "0.1.0",
 	"description": "Specimen02 is a command-line interface library. It has a simple to use, extendible interface with command line tools to help you with creating an interface between javascript and terminal. It's main focus is simplicity.",
 	"main": "index.js",
 	"scripts": {

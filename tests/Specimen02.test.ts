@@ -1,5 +1,5 @@
 import { findNestedCommand } from '../src/Specimen02';
-import { commandsStore } from '../config/specimen02';
+const commandsStore = require('../config/specimen02');
 
 describe('relay store', () => {
 	test('can find nested command', () => {
