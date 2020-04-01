@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 import { reduce, has, set, lensPath, append } from 'rambda';
-const R = require('rambda');
-
 const [, , ...args] = process.argv;
-
 // const carryArg = curry((fn: Function, arg: any) => {
 // 	fn(arg);
 // 	return arg;
@@ -12,7 +9,6 @@ const [, , ...args] = process.argv;
 // const logAndRunCommand = pipe(carriedLog, execSync, console.log);
 
 const commandReducer = (accumulatorValue: any, currentValue: any) => {
-	const R = require('rambda');
 	const argsLens = lensPath(['args'])
 	if (has("call", accumulatorValue)) {
 		const combinedArgs = append(currentValue, accumulatorValue.args || []);

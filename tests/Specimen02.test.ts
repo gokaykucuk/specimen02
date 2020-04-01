@@ -1,7 +1,6 @@
 import { findNestedCommand } from '../src/Specimen02';
 import { commandsStore } from '../config/commands';
 
-import { fromPairs } from 'ramda';
 describe('relay store', () => {
 	test('can find nested command', () => {
 		const command = findNestedCommand(['install', 'fresh'], commandsStore);
