@@ -1,4 +1,4 @@
-import { commandsStore } from '../config/commands';
+import { commandsStore } from '../config/specimen02';
 import { merge } from 'ramda';
 
 

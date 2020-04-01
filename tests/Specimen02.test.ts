@@ -1,5 +1,5 @@
 import { findNestedCommand } from '../src/Specimen02';
-import { commandsStore } from '../config/commands';
+import { commandsStore } from '../config/specimen02';
 
 describe('relay store', () => {
 	test('can find nested command', () => {
@@ -12,6 +12,7 @@ describe('relay store', () => {
 	});
 	test('can print helpful message if found object is not a command', () => {
 		const command = findNestedCommand(['install'], commandsStore);
+		// TODO
 		console.log(command);
 	});
 });

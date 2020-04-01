@@ -1,6 +1,6 @@
 {
 	"name": "specimen02",
-	"version": "0.0.91",
+	"version": "0.0.92",
 	"description": "Specimen02 is a command-line interface library. It has a simple to use, extendible interface with command line tools to help you with creating an interface between javascript and terminal. It's main focus is simplicity.",
 	"main": "index.js",
 	"scripts": {
@@ -26,11 +26,13 @@
 		"lib/**/*"
 	],
 	"bin": {
-		"specimen02": "lib/Specimen02.js"
+		"specimen02": "lib/src/Specimen02.js"
 	},
 	"author": "Gokay Kucuk",
 	"license": "MIT",
 	"dependencies": {
+		"cd": "^0.3.3",
+		"glob": "^7.1.6",
 		"rambda": "^5.0.0"
 	}
 }
